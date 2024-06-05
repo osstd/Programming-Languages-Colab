@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  color: rgb(43, 64, 94);
+}
+
+.main-heading {
+  margin-bottom: 4%;
+}
+
+.main-container {
+  margin: 1%;
+  padding: 3%;
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: rgb(171, 178, 250);
+  border-radius: 5px;
+
+  h1 {
+    font-size: 2.25rem;
+    margin-right: 10px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  span,
+  sub,
+  sup {
+    font-size: 1rem;
+  }
+}
+
+.text-container {
+  margin: 2%;
+  max-width: 98%;
+  padding: 20px 10px;
+  background-color: rgb(253, 253, 253);
+  border-style: solid;
+  border-width: 0.07rem;
+  border-color: rgb(171, 178, 250);
+  border-radius: 5px;
+  height: auto;
+  p,
+  ul {
+    margin: 1% 0%;
+    padding: 1% 2%;
+    font-size: 1.35rem;
+    text-align: justify;
+  }
+  ul {
+    li {
+      padding: 0% 2%;
+      list-style: inside;
+      font-size: 1.15rem;
+    }
+  }
+}
+
+.chart-container {
+  height:auto;
+  margin: 2%;
+  border-color: rgb(171, 178, 250);
+  border-width: 0.07rem;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+.chart-grid {
+  max-width: 95%;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.chart-grid .label {
+  grid-row: 2;
+  text-align: center;
+}
