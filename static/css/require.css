@@ -7,14 +7,14 @@
 }
 
 .main-heading {
-  margin-bottom: 4%;
+  margin:4% 0%;
 }
 
 .main-container {
-  margin: 1%;
+  margin: 5%;
   padding: 3%;
   border-style: solid;
-  border-width: 0.05rem;
+  border-width: 0.1rem;
   border-color: rgb(171, 178, 250);
   border-radius: 5px;
 
@@ -44,7 +44,7 @@
   padding: 20px 10px;
   background-color: rgb(253, 253, 253);
   border-style: solid;
-  border-width: 0.07rem;
+  border-width: 0.15rem;
   border-color: rgb(171, 178, 250);
   border-radius: 5px;
   height: auto;
@@ -68,7 +68,7 @@
   height:auto;
   margin: 2%;
   border-color: rgb(171, 178, 250);
-  border-width: 0.07rem;
+  border-width: 0.075rem;
   border-style: solid;
   border-radius: 5px;
   padding: 3%;
