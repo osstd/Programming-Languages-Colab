@@ -1,108 +1,141 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="static/icon.png" type="image/x-icon"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/icon.png" type="image/x-icon" />
     <title>Programming Languages Dataset</title>
 
-    <link rel="stylesheet" href="static/css/require.css">
+    <link rel="stylesheet" href="static/css/require.css" />
 
     <!-- Include Plotly JS library -->
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-</head>
-<body>
-<div class="main-container">
-
-    <div class="main-heading">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-heading">
         <h1>Programming Languages</h1>
-    </div>
+      </div>
 
-    <div class="text-container">
+      <div class="text-container">
+        <h2>Introduction</h2>
+        <p>
+          A query on the number of posts on StackExchange for selected
+          programming languages has been conducted, providing insights into the
+          popularity of different languages over time. The query, accessible
+          through EverSQL.com, offers a comprehensive overview of the
+          programming languages that have garnered the most attention on the
+          platform. Follow this link to run a new query from
+          <a
+            href="https://data.stackexchange.com/stackoverflow/query/675441/popular-programming-languages-per-over-time-eversql-com"
+            >StackExchange</a
+          >.
+        </p>
+      </div>
+
+      <div class="text-container">
         <h2>Data Manipulation</h2>
         <p>
-            To begin, we will read in the dataset from a .csv file into a Pandas dataframe. We will then inspect the
-            first and last few rows of the data to get a sense of its structure and content. Next, we will examine
-            the dimensions of the dataframe, including the number of rows and columns, and count the number of
-            entries in each column. We will also calculate the total number of posts for each programming language
-            and identify which language has had the most posts. Finally, we will reformat the date column to make it
-            more readable.
+          To begin, we will read in the dataset from a .csv file into a Pandas
+          dataframe. We will then inspect the first and last few rows of the
+          data to get a sense of its structure and content. Next, we will
+          examine the dimensions of the dataframe, including the number of rows
+          and columns, and count the number of entries in each column. We will
+          also calculate the total number of posts for each programming language
+          and identify which language has had the most posts. Finally, we will
+          reformat the date column to make it more readable.
         </p>
         <ul>
-            <li>Read in the dataset from a .csv file</li>
-            <li>Inspect the first and last few rows of the data</li>
-            <li>Examine the dimensions of the dataframe</li>
-            <li>Count the number of entries in each column</li>
-            <li>Calculate the total number of posts for each language</li>
-            <li>Identify the language with the most posts</li>
-            <li>Reformat the date column</li>
-            <li>Show two lines (e.g. for Java and Python) on the same chart.</li>
+          <li>Read in the dataset from a .csv file</li>
+          <li>Inspect the first and last few rows of the data</li>
+          <li>Examine the dimensions of the dataframe</li>
+          <li>Count the number of entries in each column</li>
+          <li>Calculate the total number of posts for each language</li>
+          <li>Identify the language with the most posts</li>
+          <li>
+            Reformat the date column; se Pandas to change format from a string
+            of "2008-07-01 00:00:00" to a datetime object with the format of
+            "2008-07-01"
+          </li>
         </ul>
-    </div>
+      </div>
 
-    <!-- Display the Plotly chart -->
+      <div class="text-container">
+        <h2>Data Visualization with Matplotlib</h2>
+        <p>
+          Show a plot with two traces (e.g. for Java and Python) on the same
+          chart.
+        </p>
+      </div>
 
-    <div class="chart-container">
+      <div class="chart-container">
         <div class="chart-grid">
-            <div class="chart" id="chart1"></div>
-            <span class="label">Figure 1</span>
+          <div class="chart" id="chart1"></div>
+          <span class="label">Figure 1</span>
         </div>
-    </div>
+      </div>
 
-    <div class="text-container">
+      <div class="text-container">
         <h2>Plot All</h2>
-        <p>Plot all different programming languages on the same chart. You can:</p>
+        <p>
+          Plot all different programming languages on the same chart. You can:
+        </p>
         <ul>
-            <li>Pan</li>
-            <li>Zoom</li>
-            <li>Reset the axes</li>
-            <li>Press on a language to show or hide a dataset using the legend</li>
-            <li>Double click to isolate the language</li>
-            <li>Download a copy of the plot as a png file by hovering over to the menu on the top right</li>
+          <li>Pan</li>
+          <li>Zoom</li>
+          <li>Reset the axes</li>
+          <li>
+            Press on a language to show or hide a dataset using the legend
+          </li>
+          <li>Double click to isolate the language</li>
+          <li>
+            Download a copy of the plot as a png file by hovering over to the
+            menu on the top right
+          </li>
         </ul>
-    </div>
+      </div>
 
-
-    <div class="chart-container">
+      <div class="chart-container">
         <div class="chart-grid">
-            <div class="chart" id="chart2"></div>
-            <span class="label">Figure 2</span>
+          <div class="chart" id="chart2"></div>
+          <span class="label">Figure 2</span>
         </div>
-    </div>
+      </div>
 
-    <div class="text-container">
+      <div class="text-container">
         <h2>Smoothing out Time Series Data</h2>
-        <p>Time series data can be quite noisy, with a lot of up and down spikes. To better see a trend we can plot an
-            average of, say 6 or 12 observations. This is called the rolling mean. We calculate the average in a window
-            of time and move it forward by one observation. Pandas has two handy methods already built in to work this
-            out: rolling() and mean().</p>
+        <p>
+          Time series data can be quite noisy, with a lot of up and down spikes.
+          To better see a trend we can plot an average of, say 6 or 12
+          observations. This is called the rolling mean. We calculate the
+          average in a window of time and move it forward by one observation.
+          Pandas has two handy methods already built in to work this out:
+          <code>.rolling()</code> and <code>.mean()</code>
+        </p>
         <p>Time series using a mean every 6 observations.</p>
-    </div>
+      </div>
 
-    <div class="chart-container">
+      <div class="chart-container">
         <div class="chart-grid">
-            <div class="chart" id="chart3"></div>
-            <span class="label">Figure 3</span>
+          <div class="chart" id="chart3"></div>
+          <span class="label">Figure 3</span>
         </div>
-    </div>
+      </div>
 
-    <div class="text-container">
+      <div class="text-container">
         <h2>Smoothing out Time Series Data</h2>
         <p>Time series using a mean every 12 observations.</p>
-    </div>
+      </div>
 
-    <div class="chart-container">
+      <div class="chart-container">
         <div class="chart-grid">
-            <div class="chart" id="chart4"></div>
-            <span class="label">Figure 4</span>
+          <div class="chart" id="chart4"></div>
+          <span class="label">Figure 4</span>
         </div>
+      </div>
     </div>
 
-</div>
-
-<script src="static/js/require.js"></script>
-</body>
+    <script src="static/js/require.js"></script>
+  </body>
 </html>

@@ -7,7 +7,6 @@ async function fetchCSVData(url) {
 async function plotLine(data, title, num) {
   const pdf = Plotly.d3.csv.parse(data);
 
-  // Create line plot
   const line = {
     data: [
       {
@@ -63,7 +62,6 @@ async function plotLine(data, title, num) {
 async function plotScatter(data, title, num) {
   const pdf = Plotly.d3.csv.parse(data);
 
-  // Create scatter plot
   const columns = Object.keys(pdf[0]).filter((col) => col !== "DATE");
 
   const scatter = {
@@ -118,7 +116,7 @@ async function plotScatter(data, title, num) {
     },
   };
 
-  // Create traces for each column
+  // Create traces for each series
   columns.map((column) => {
     scatter.data.push({
       x: pdf.map((row) => row.DATE),
@@ -135,7 +133,6 @@ async function plotScatter(data, title, num) {
 }
 
 async function main() {
-  const startTime = performance.now();
   try {
     const pivotedData = await fetchCSVData(
       "static/assets/csv/pivoted_data.csv"
@@ -152,9 +149,6 @@ async function main() {
     ]);
   } catch (error) {
     console.error("Error loading or plotting data:", error);
-  } finally {
-    const endTime = performance.now();
-    console.log(`Execution time: ${endTime - startTime}ms`);
   }
 }
 
